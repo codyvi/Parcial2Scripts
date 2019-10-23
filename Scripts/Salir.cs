@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class Salir : MonoBehaviour
 {
     // Start is called before the first frame update
     public void PlayGame()
@@ -11,20 +11,9 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void Instrucciones()
+    public void QuitGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
-    }
-    
-    public void Creditos()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
-    }
-
-    public void Salir()
-    {
-        Debug.Log("Quit!");
-        Application.Quit();
     }
    
 }
