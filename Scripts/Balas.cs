@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Puntos : MonoBehaviour
+public class Balas : MonoBehaviour
 {
     public Text txt;
 
@@ -14,14 +14,13 @@ public class Puntos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Disparo.yalediobro = 0;
-        txt.text = "Puntos: ";
-        crash = 0;
+        txt.text = "Balas: ";
+        crash = 10;
     }
 
     // Update is called once per frame
     void Update()
     {
-        txt.text = "Puntos: " + crash;
+        txt.text = "Balas: " + crash;
     }
 }

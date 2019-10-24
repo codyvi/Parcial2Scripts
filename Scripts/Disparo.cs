@@ -11,8 +11,8 @@ public class Disparo : MonoBehaviour
     public int maxAmmo = 10;
     private int currentAmo;
     public AudioSource audioData;
-    // public int puntos = 0;
-    // public int count = 0;
+    public static int destruidos;
+    public static int yalediobro;
 
     
     Rigidbody clone;
@@ -38,7 +38,7 @@ public class Disparo : MonoBehaviour
         }
 
         //Condición para ganar
-        if(Puntos.crash == 25)
+        if(destruidos == 5 && yalediobro == 5)
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -51,6 +51,7 @@ public class Disparo : MonoBehaviour
             clone = Instantiate(bala, transform.position,transform.rotation);
             clone.velocity = transform.TransformDirection(0,0,-speed);
             currentAmo--;
+            Balas.crash--;
             Destroy(clone.gameObject,1);
         }
     }
@@ -60,22 +61,27 @@ public class Disparo : MonoBehaviour
       if(col.gameObject.name=="Oxigeno")
       {
           Puntos.crash += 5;
+          yalediobro++;
       }
       if (col.gameObject.name=="Hierro")
       {
           Puntos.crash += 5;
+          yalediobro++;
       }
       if (col.gameObject.name=="Cobre")
       {
           Puntos.crash += 5;
+          yalediobro++;
       }
       if (col.gameObject.name=="Sodio")
       {
           Puntos.crash += 5;
+          yalediobro++;
       }
       if (col.gameObject.name=="Fosforo")
       {
           Puntos.crash += 5;
+          yalediobro++;
       }
       if(col.gameObject.name=="F1")
       {
